@@ -1,10 +1,12 @@
 import '../styles/styles.scss'
-// import {HBOPrivider} from '../components/HBOProvider'
+import {HBOProvider} from '../components/HBOProvider'
 
 function MyApp({ Component, pageProps }) {
-  // <HBOProvider>
-  return <Component {...pageProps} />
-  {/* </HBOProvider> */}
+  return(
+  <HBOProvider>
+   <Component {...pageProps} />
+   </HBOProvider>
+  ) 
 }
 
 export default MyApp

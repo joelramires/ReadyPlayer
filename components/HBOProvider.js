@@ -1,18 +1,26 @@
-// import React, {useContext, UseContext, useState} from 'react'; 
+import React, { useContext,  useState } from 'react'; 
 
-// export StateContext = React.createContext();
+ export const StateContext = React.createContext();
 
-// export function useStateContext(){
-//     return useContext(StateContext)
-// }
+export function useStateContext() {
+    return useContext(StateContext)
+}
 
-// export function HBOProvider({children}){
-//     return(
-//         <StateContext.Provider
-//         value={{
-//             test: 'test'
-//         }}>
-//             {children}
-//         </StateContext.Provider>
-//     )
-// }
+export function HBOProvider({ children }){
+const [user, setUser] = useState('')
+const defaultUserImg = 'https://faces-img.xcdn.link/thumb-lorem-face-1039_thumb.jpg'
+const createUserAction = (e) => {
+setUser(e.target.value)
+console.log(user)
+}
+    return (
+        <StateContext.Provider
+            value={{ 
+                user,
+                createUserAction,
+                defaultUserImg
+            }}>
+            {children}
+        </StateContext.Provider>
+    )
+}
