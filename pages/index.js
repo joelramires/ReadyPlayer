@@ -8,7 +8,7 @@ import AuthCheck from '../components/AuthCheck'
 import Header from '../components/UI/Header/Header'
 import MediaRow from '../components/UI/MediaRow/MediaRow'
 import LazyLoad from 'react-lazyload'
-import Placeholders from "../components/UI/Placeholders/PlaceHolders";
+import Placeholders from "../components/UI/Placeholders/Placeholders";
 
 
 export default function Home() {
