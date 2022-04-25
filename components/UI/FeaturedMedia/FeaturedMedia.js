@@ -16,7 +16,7 @@ const FeaturedMedia = (props) => {
                     <div className="featured-media__location">In theaters and on HBO MAX. Streaming throughout May 23.</div>
                     <div className="featured-media__buttons">
                         <div className="featured-media__play-btn">
-                            <i className="fas fa-play" />
+                            <i className="fa fa-play" />
                         </div>
                         <div className="featured-media__info-btn">MORE INFO</div>
                     </div>

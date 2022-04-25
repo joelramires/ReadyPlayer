@@ -13,12 +13,22 @@ const createUserAction = (e) => {
 setUser(e.target.value)
 console.log(user)
 }
+const [sideNavOpen, setSideNavOpenAction] = useState('false')
+const [accountModalOpen, setAccountModalOpenAction] = useState('false')
+const [searchOpen, setSearchOpenAction] = useState('false')
+
     return (
         <StateContext.Provider
             value={{ 
                 user,
                 createUserAction,
-                defaultUserImg
+                defaultUserImg,
+                sideNavOpen,
+                setSideNavOpenAction,
+                accountModalOpen,
+                setAccountModalOpenAction,
+                searchOpen,
+                setSearchOpenAction
             }}>
             {children}
         </StateContext.Provider>

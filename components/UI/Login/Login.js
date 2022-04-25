@@ -1,9 +1,45 @@
 import Head from 'next/head'
+import {useState, useEffect} from 'react'
 import { useStateContext } from '../../HBOProvider'
+import { useRouter} from 'next/router';
+import ls from 'local-storage';
+import { useMounted } from '../../Hooks/useMounted' 
 
 const Login = () => {
 const globalState = useStateContext();
+const router = useRouter();
+const [loadingUsers, setLoadingUsers] = useState(false)
+let users = ls('users') !== null ? ls('users') : []
+let {hasMounted} = useMounted();
 
+
+useEffect(() => {
+    if(users < 1){
+        setLoadingUsers(false)
+    }
+    console.log('load effect', users)
+}, [])
+
+console.log('declared users', users)
+const selectUser = (id) => {
+    ls('activeUID', id)
+    router.push('/')
+}
+const showUsers = () => {
+    if(!loadingUsers){
+        return users.map((user) =>{
+            return(   <div onClick = {() => selectUser(user.id)} className="login-user__user-box" key={user.id}>
+            <img className="login-user__user-img" src="https://faces-img.xcdn.link/thumb-lorem-face-1039_thumb.jpg"/>
+  <div className="login-user__user-name">{user.user}</div>
+      </div>
+      )
+        })
+    }
+    
+    }
+    const createUser = () => {
+        router.push('/') 
+}
   
   return (
     
@@ -15,14 +51,14 @@ const globalState = useStateContext();
           </span>
         </div>
         <div className="login-user__form">
+            {hasMounted ? showUsers() : ''}
           <div className="login-user__user-box">
             <img className="login-user__user-img" src="https://faces-img.xcdn.link/thumb-lorem-face-1039_thumb.jpg"/>
   <div className="login-user__user-name">{globalState.test}</div>
       </div>
     </div>
     <div className="login-user__buttons">
-   <button className="login-user__adult">Add Adult</button>
-   <button className="login-user__kid">Add Kid</button>
+   <button className="login-user__kid" onClick={createUser}>Create User</button>
     </div>
     </div>
   )
