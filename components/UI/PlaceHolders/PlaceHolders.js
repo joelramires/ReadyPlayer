@@ -55,4 +55,4 @@ const Placeholders = (props) => {
 
 
 
-export default Placeholders; 
+export default Placeholders ; 

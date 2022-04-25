@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { useStateContext } from '../components/HBOProvider';
-import Login from '../components/UI/Login/Login'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router';
 import MainLayout from '../components/Layouts/MainLayout'
@@ -9,7 +8,7 @@ import AuthCheck from '../components/AuthCheck'
 import Header from '../components/UI/Header/Header'
 import MediaRow from '../components/UI/MediaRow/MediaRow'
 import LazyLoad from 'react-lazyload'
-import Placeholders from '../components/UI/Placeholders/PlaceHolders'
+import Placeholders from "../components/UI/Placeholders/PlaceHolders";
 
 
 export default function Home() {
