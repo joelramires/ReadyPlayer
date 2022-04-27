@@ -92,7 +92,7 @@ import FeaturedMedia from "../components/UI/FeaturedMedia/FeaturedMedia";
 import MediaRow from "../components/UI/MediaRow/MediaRow";
 import AuthCheck from "../components/AuthCheck";
 import LazyLoad from "react-lazyload";
-import Placeholders from "../components/UI/Placeholders/PlaceHolders";
+import Placeholders from "../components/UI/Placeholders/Placeholders";
 
 export default function Home() {
 	const globalState = useStateContext();
